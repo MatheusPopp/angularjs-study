@@ -1,18 +1,23 @@
 ﻿angular.module('myApp')
-    .controller('loginController', ['$scope',function ($scope) {
+    .controller('loginController', ['$scope','$location',function ($scope,$location) {
 
 
-
+        $scope.pageModel.page.name = $location.path();
         $scope.model = {
             email: undefined,
             senha: undefined,
-            lembrar: undefined
+            lembrar: false
         }
 
         $scope.lembrarChange = function(){
-            if (!$scope.model.lembrar) {
-                alert("mudou");
+            if ($scope.model.lembrar) {
+               
             }
+        }
+
+        $scope.logarUsuario = function(){
+            alert($scope.model.email +$scope.model.senha+ $scope.model.lembrar);
+            $location.url('/home');
         }
 
 

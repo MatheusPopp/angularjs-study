@@ -8,7 +8,6 @@
 
 
 
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="format-detection" content="telephone=no">
@@ -19,14 +18,16 @@
     <script src="../Scripts/jquery-3.0.0.min.js"></script>
 
     <!-- Bootstrap Stylesheets and Scripts-->
-    <link rel="stylesheet" href="../Content/bootstrap.min.css" />
-    <script src="../Scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../Content/bootstrap.css" />
+    <script src="../Scripts/bootstrap.js"></script>
 
     <!-- Angular scripts-->
     <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-route.js"></script>
     <script src="app.js"></script>
     <script src="controller/loginController.js"></script>
     <script src="controller/mainController.js"></script>
+    <script src="controller/homeController.js"></script>
 
 
     <!--Popper scripts-->
@@ -34,69 +35,31 @@
 
     <title>My App</title>
 </head>
-<body ng-controller="mainController">
+<body ng-controller="mainController" >
 
-    <div class="statusbar-overlay"></div>
-    <div class="panel-overlay"></div>
 
     <!-- As a heading -->
     <nav class="navbar navbar-light bg-light">
 
         <span class="navbar-brand mb-0 h1">My App</span>
-        <div class="nav-item dropdown col-2">
+        <div  class="nav-item dropdown ">
             <a class="nav-link btn-light dropdown-toggle "  id="navbarDropdownMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 
             </a>
-            <div class="dropdown-menu align-items-lg-end" aria-labelledby="navbarDropdownMenu">
+            <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Sobre</a>
                 <a class="dropdown-item" href="#">Opções</a>
+                <a ng-show="pageModel.page.name != '/'" class="dropdown-item" href="#">Sair</a>
             </div>
         </div>
     </nav>
 
     <hr />
 
+    <ng-view>
+    </ng-view>
 
-    <div class="container" ng-app="myApp" ng-controller="loginController" >
-
-        <form ng-submit="logarUsuario()">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required ng-model="model.email">
-
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Senha</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required ng-model="model.senha">
-            </div>
-            <div class="align-content-lg-start">
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1" ng-model="model.lembrar" ng-change="lembrarChange()">
-                    <label class="form-check-label" for="exampleCheck1">Lembrar-me</label>
-                </div>
-            </div>
-            <hr />
-            <div class="">
-                <div class="row">
-                    <div class="col-3">
-                        <button type="submit" class="btn btn-light ">Entrar</button>
-                    </div>
-                    <div class="col-3">
-                        <button class="btn btn-light">Cadastrar</button>
-                    </div>
-                </div>
-            </div>
-
-        </form>
-
-    </div>
-
-
-
-
-
-
-
+   
 
 </body>
 </html>
