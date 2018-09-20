@@ -1,45 +1,102 @@
 ﻿<!DOCTYPE html>
-<html>
-    <head>
+<html ng-app="myApp">
+<head>
     <!--
         Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
         For details, see http://go.microsoft.com/fwlink/?LinkID=617521
     -->
 
-        <!-- Jquery Scripts-->
-        <script src="../Scripts/jquery-3.0.0.min.js"></script>
 
-        <!-- Bootstrap Stylesheets and Scripts-->
-        <link href="../Content/bootstrap.min.css"/>
-        <script src="../Scripts/bootstrap.min.js"></script>
 
-        <!-- Angular scripts-->
-        <script src="../Scripts/angular.min.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
 
-        <!--Popper scripts-->
-        <script src="../Scripts/umd/popper.min.js"></script>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>angularstudyapp</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+    <!-- Jquery Scripts-->
+    <script src="../Scripts/jquery-3.0.0.min.js"></script>
+
+    <!-- Bootstrap Stylesheets and Scripts-->
+    <link rel="stylesheet" href="../Content/bootstrap.min.css" />
+    <script src="../Scripts/bootstrap.min.js"></script>
+
+    <!-- Angular scripts-->
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controller/loginController.js"></script>
+    <script src="controller/mainController.js"></script>
+
+
+    <!--Popper scripts-->
+    <script src="../Scripts/umd/popper.min.js"></script>
+
+    <title>My App</title>
+</head>
+<body ng-controller="mainController">
+
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-light bg-light">
+
+        <span class="navbar-brand mb-0 h1">My App</span>
+        <div class="nav-item dropdown col-2">
+            <a class="nav-link btn-light dropdown-toggle "  id="navbarDropdownMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+            </a>
+            <div class="dropdown-menu align-items-lg-end" aria-labelledby="navbarDropdownMenu">
+                <a class="dropdown-item" href="#">Sobre</a>
+                <a class="dropdown-item" href="#">Opções</a>
             </div>
         </div>
+    </nav>
 
-        
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
-        <script type="text/javascript" src="scripts/index.js"></script>
-    </body>
+    <hr />
+
+
+    <div class="container" ng-app="myApp" ng-controller="loginController" >
+
+        <form ng-submit="logarUsuario()">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required ng-model="model.email">
+
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Senha</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required ng-model="model.senha">
+            </div>
+            <div class="align-content-lg-start">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" ng-model="model.lembrar" ng-change="lembrarChange()">
+                    <label class="form-check-label" for="exampleCheck1">Lembrar-me</label>
+                </div>
+            </div>
+            <hr />
+            <div class="">
+                <div class="row">
+                    <div class="col-3">
+                        <button type="submit" class="btn btn-light ">Entrar</button>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-light">Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+
+
+
+
+
+
+
+</body>
 </html>
