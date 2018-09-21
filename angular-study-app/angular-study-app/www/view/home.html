@@ -1,18 +1,29 @@
 ﻿<div ng-app="myApp" ng-controller="homeController" class="container">
-    <form class="searchbar">
-        <div class="searchbar-input" >
-            <input type="search" placeholder="" >
-            <a href="#" class="searchbar-clear"></a>
+    <div class="page">
+        <div class="navbar">...</div>
+        <div class="page-content">
+            <div class="searchbar-backdrop"></div>
+
+            <!-- Searchbar with "searchbar-init" class for auto initialization and searchContainer, searchIn parameters passed in data- attributes  -->
+            <form class="searchbar searchbar-init" data-search-container=".search-here">
+                ...
+            </form>
+
+            <div class="list simple-list search-list searchbar-found">
+                <ul>
+                    <li>Hulk</li>
+                    <li>Batman</li>
+                    <li>Superman</li>
+                    ...
+                </ul>
+            </div>
+
+            ...
         </div>
-        <div style="color: white;" >
-            Clique em enviar para transferir ou copiar as cotações
-        </div>
-        <a href="#" class="searchbar-cancel">Cancel</a>
-    </form>
+    </div>
 
 
 
+        <i class="f7-icons size-25" style="color:green;font-size:50px;position:fixed;bottom:15px;right:15px;">add_round_fill</i>
 
-    <i class="f7-icons size-25" style="color:green;font-size:50px;position:fixed;bottom:15px;right:15px;">add_round_fill</i>
-
-</div>
+    </div>

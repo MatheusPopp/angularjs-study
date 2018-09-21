@@ -1,4 +1,11 @@
-﻿angular.module('myApp', ['ngRoute'])
+﻿var $$ = new Dom7;
+
+var app = new Framework7({});
+
+
+
+
+angular.module('myApp', ['ngRoute'])
     .run(['$rootScope','$location', function ($rootScope,$location) {
 
 
@@ -32,3 +39,6 @@
             });
         
     }]);
+
+
+

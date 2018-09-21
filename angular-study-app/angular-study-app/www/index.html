@@ -21,6 +21,14 @@
     <link rel="stylesheet" href="../Content/bootstrap.css" />
     <script src="../Scripts/bootstrap.js"></script>
 
+    <!--Framework 7 css-->
+    <link rel="stylesheet" href="css/f7/framework7-icons.css" />
+    <link rel="stylesheet" href="css/f7/framework7.ios.css" />
+    <link rel="stylesheet" href="css/f7/framework7.min.css" />
+
+    <!--Framework 7 js-->
+    <script src="js/f7/framework7.min.js"></script>
+
     <!-- Angular scripts-->
     <script src="../Scripts/angular.min.js"></script>
     <script src="../Scripts/angular-route.js"></script>
@@ -31,36 +39,38 @@
     <script src="controller/cadastroController.js"></script>
 
 
+
     <!--Popper scripts-->
     <script src="../Scripts/umd/popper.min.js"></script>
 
-    <!--Framework 7 css-->
-    <link rel="stylesheet" href="css/f7/framework7-icons.css" />
+
+
+
+
 
     <!--Personal CSS-->
     <link rel="stylesheet" href="css/index.css" />
 
     <title>My App</title>
 </head>
-<body ng-controller="mainController" >
-
-
+<body ng-controller="mainController">
+    
     <!-- As a heading -->
-    <nav class="navbar navbar-light bg-light" ng-show="pageModel.page.name != '/' && pageModel.page.name != '/cadastro'")>
+    <nav class="navbar navbar-light bg-light" ng-show="pageModel.page.name != '/' && pageModel.page.name != '/cadastro'" )>
 
         <div ng-show="pageModel.page.name !='/' && pageModel.page.name !='/home' ">
             <i class="f7-icons">home</i>
-            
+
         </div>
         <span class="navbar-brand mb-0 h1">My App</span>
-        <div  class="nav-item dropdown ">
+        <div class="nav-item dropdown ">
             <i class="nav-link  f7-icons " id="navbarDropdownMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 dropdown-toggle
             </i>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Sobre</a>
                 <a class="dropdown-item" href="#">Opções</a>
-                <a ng-show="pageModel.page.name != '/'" class="dropdown-item" href="#">Sair</a>
+                <a ng-show="pageModel.page.name != '/'" class="dropdown-item" ng-click="sair()">Sair</a>
             </div>
         </div>
     </nav>
@@ -70,7 +80,7 @@
     <ng-view>
     </ng-view>
 
-   
+
 
 </body>
 </html>
