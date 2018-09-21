@@ -20,6 +20,12 @@
 
             })
 
+            .when("/cadastro", {
+
+                templateUrl: "view/cadastro.html",
+                controller: "cadastroController"
+            })
+
             
             .otherwise({
                 redirectTo: '/'

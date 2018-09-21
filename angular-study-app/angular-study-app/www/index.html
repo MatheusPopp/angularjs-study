@@ -28,6 +28,7 @@
     <script src="controller/loginController.js"></script>
     <script src="controller/mainController.js"></script>
     <script src="controller/homeController.js"></script>
+    <script src="controller/cadastroController.js"></script>
 
 
     <!--Popper scripts-->
@@ -45,13 +46,17 @@
 
 
     <!-- As a heading -->
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light" ng-show="pageModel.page.name != '/' && pageModel.page.name != '/cadastro'")>
 
+        <div ng-show="pageModel.page.name !='/' && pageModel.page.name !='/home' ">
+            <i class="f7-icons">home</i>
+            
+        </div>
         <span class="navbar-brand mb-0 h1">My App</span>
         <div  class="nav-item dropdown ">
-            <a class="nav-link btn-light dropdown-toggle "  id="navbarDropdownMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                
-            </a>
+            <i class="nav-link  f7-icons " id="navbarDropdownMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                dropdown-toggle
+            </i>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Sobre</a>
                 <a class="dropdown-item" href="#">Opções</a>
