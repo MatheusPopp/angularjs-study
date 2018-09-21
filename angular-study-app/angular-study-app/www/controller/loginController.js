@@ -16,8 +16,12 @@
         }
 
         $scope.logarUsuario = function(){
-            alert($scope.model.email +$scope.model.senha+ $scope.model.lembrar);
             $location.url('/home');
+        }
+
+        $scope.cadastrarUsuario = function () {
+
+            $location.url('/cadastro');
         }
 
 
