@@ -1,29 +1,21 @@
 ﻿<div ng-app="myApp" ng-controller="homeController" class="container">
-    <div class="page">
-        <div class="navbar">...</div>
-        <div class="page-content">
-            <div class="searchbar-backdrop"></div>
-
-            <!-- Searchbar with "searchbar-init" class for auto initialization and searchContainer, searchIn parameters passed in data- attributes  -->
-            <form class="searchbar searchbar-init" data-search-container=".search-here">
-                ...
+    <div class="navbar-light">
+            <div class="dialog-title">Anotações</div>
+            <form class="searchbar">
+                <div class="searchbar-inner">
+                    <div class="searchbar-input-wrap">
+                        <input type="search" placeholder="Pesquisar">
+                        <i class="searchbar-icon"></i>
+                        <span class="input-clear-button"></span>
+                    </div>
+                    <span class="searchbar-disable-button">Cancel</span>
+                </div>
             </form>
 
-            <div class="list simple-list search-list searchbar-found">
-                <ul>
-                    <li>Hulk</li>
-                    <li>Batman</li>
-                    <li>Superman</li>
-                    ...
-                </ul>
-            </div>
-
-            ...
-        </div>
+       
     </div>
 
 
 
-        <i class="f7-icons size-25" style="color:green;font-size:50px;position:fixed;bottom:15px;right:15px;">add_round_fill</i>
-
-    </div>
+    <i class="f7-icons size-25" style="color:green;font-size:50px;position:fixed;bottom:15px;right:15px;">add_round_fill</i>
+</div>
