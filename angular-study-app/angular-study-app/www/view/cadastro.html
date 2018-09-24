@@ -1,22 +1,76 @@
 ﻿<div ng-app="myApp" ng-controller="cadastroController">
 
 
-    <div class="container">
-        <form name=formCadastro ng-submit="realizarCadastro()">
-            <div class="list-group">
-                <div>
+    
+        <!-- Static Navbar -->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="left">
+                    <a class="link back">
+                        <i class="icon icon-back" ng-click="sair()"></i>
+                        <span class="ios-only"></span>
+                    </a>
                 </div>
-
+                <div class="title">Cadastro</div>
+                <div class="right"></div>
             </div>
-
-
-
-
+        </div>
+    
+        <form class="list" id="my-form" ng-submit="cadastrar()">
+            <ul>
+                <li>
+                    <div class="item-content item-input">
+                        <div class="item-inner">
+                            <div class="item-title item-label">Name</div>
+                            <div class="item-input-wrap">
+                                <input type="text" name="nomename" placeholder="Seu nome" ng-model="model.nome">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content item-input">
+                        <div class="item-inner">
+                            <div class="item-title item-label">E-mail</div>
+                            <div class="item-input-wrap">
+                                <input type="email" name="email" placeholder="E-mail" ng-model="model.email">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content item-input">
+                        <div class="item-inner">
+                            <div class="item-title item-label">Gênero</div>
+                            <div class="item-input-wrap">
+                                <select name="genero" ng-model="model.genero">
+                                    <option value="masculino" selected >Masculino</option>
+                                    <option value="feminino" >Feminino</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content item-input">
+                        <div class="item-inner">
+                            <div class="item-title item-label">Data Nascimento</div>
+                            <div class="item-input-wrap">
+                                <input type="date" name="data" placeholder="data" value="2018-01-01" ng-model="model.data_nasc">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="block block-strong row">
+                <div class="col"><button type="submit" class="btn btn-primary"> Cadastrar</button></div>
+                <div class="col"><button type="button" class="btn btn-danger" ng-click="sair()">Cancelar</button></div>
+            </div>
         </form>
+        
+
+
+
+
+
     </div>
-
-
-
-
-
-</div>
