@@ -8,5 +8,10 @@
             }
         }
 
+        $scope.criarAnotacao = function () {
+            $location.url('/home/criarAnotacao');
+            
+        }
+
 
     }]);

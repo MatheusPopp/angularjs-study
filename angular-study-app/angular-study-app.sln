@@ -4,10 +4,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "Angular.Study.App", "angular-study-app\Angular.Study.App.jsproj", "{6E7B357C-82F9-45B7-A00C-117CE7315E81}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D5A3DA87-0728-4B07-A2EA-40BA88CA5420} = {D5A3DA87-0728-4B07-A2EA-40BA88CA5420}
+		{F7CBCEE9-F88F-4390-BD1F-93BFA3939DEF} = {F7CBCEE9-F88F-4390-BD1F-93BFA3939DEF}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angular.Study.Entity", "ClassLibrary2\Angular.Study.Entity.csproj", "{F7CBCEE9-F88F-4390-BD1F-93BFA3939DEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Angular.Study.Entity", "ClassLibrary2\Angular.Study.Entity.csproj", "{F7CBCEE9-F88F-4390-BD1F-93BFA3939DEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angular.Study.DataAccess", "ClassLibrary3\Angular.Study.DataAccess.csproj", "{D5A3DA87-0728-4B07-A2EA-40BA88CA5420}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Angular.Study.DataAccess", "ClassLibrary3\Angular.Study.DataAccess.csproj", "{D5A3DA87-0728-4B07-A2EA-40BA88CA5420}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -37,6 +37,7 @@
     <script src="controller/mainController.js"></script>
     <script src="controller/homeController.js"></script>
     <script src="controller/cadastroController.js"></script>
+    <script src="controller/criarAnotacaoController.js"></script>
 
 
 
@@ -54,12 +55,13 @@
     <title>My App</title>
 </head>
 <body ng-controller="mainController">
+    <div id="processing" style="display: none"><img src="images/spinner.gif" /></div>
     
     <!-- As a heading -->
     <nav class="navbar" ng-show="pageModel.page.name != '/' && pageModel.page.name != '/cadastro'" )>
 
         <div ng-show="pageModel.page.name !='/' && pageModel.page.name !='/home' ">
-            <i class="f7-icons">home</i>
+            <i class="f7-icons" ng-click="irParaHome()">home</i>
 
         </div>
       

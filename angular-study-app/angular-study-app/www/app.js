@@ -6,7 +6,7 @@ var app = new Framework7({});
 
 
 angular.module('myApp', ['ngRoute'])
-    .run(['$rootScope','$location', function ($rootScope,$location) {
+    .run(['$rootScope', '$location', function ($rootScope, $location) {
 
 
         $rootScope.pageModel = {
@@ -14,13 +14,17 @@ angular.module('myApp', ['ngRoute'])
                 name: $location.path()
             }
         }
+
+        $rootScope.irParaHome = function () {
+            $location.url("/home");
+        }
     }])
-    .config(['$routeProvider',function ($routeProvider) {
+    .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
-            .when("/",{
+            .when("/", {
                 templateUrl: "view/login.html",
                 controller: "loginController"
-             })
+            })
             .when("/home", {
                 templateUrl: "view/home.html",
                 controller: 'homeController'
@@ -33,12 +37,39 @@ angular.module('myApp', ['ngRoute'])
                 controller: "cadastroController"
             })
 
-            
+            .when("/home/criarAnotacao", {
+
+                templateUrl: "view/criarAnotacao.html",
+                controller: "criarAnotacaoController"
+            })
+
+
             .otherwise({
                 redirectTo: '/'
             });
-        
-    }]);
 
+    }])
+    .config(['$httpProvider',function ($httpProvider) {
+
+        $httpProvider.interceptors.push(function ($q) {
+            return {
+                'request': function (config) {
+                    $('#processing').show();
+                    return config;
+                },
+
+                'response': function (response) {
+                    $('#processing').hide();
+                    return response;
+                }
+            };
+
+
+
+        });
+
+
+
+    }]);
 
 
