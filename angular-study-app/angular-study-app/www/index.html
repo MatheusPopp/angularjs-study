@@ -56,13 +56,15 @@
 <body ng-controller="mainController">
     
     <!-- As a heading -->
-    <nav class="navbar navbar-light bg-light" ng-show="pageModel.page.name != '/' && pageModel.page.name != '/cadastro'" )>
+    <nav class="navbar" ng-show="pageModel.page.name != '/' && pageModel.page.name != '/cadastro'" )>
 
         <div ng-show="pageModel.page.name !='/' && pageModel.page.name !='/home' ">
             <i class="f7-icons">home</i>
 
         </div>
+      
         <span class="navbar-brand mb-0 h1">My App</span>
+
         <div class="nav-item dropdown ">
             <i class="nav-link  f7-icons " id="navbarDropdownMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 dropdown-toggle
@@ -73,6 +75,7 @@
                 <a ng-show="pageModel.page.name != '/'" class="dropdown-item" ng-click="sair()">Sair</a>
             </div>
         </div>
+     
     </nav>
     <br />
   
